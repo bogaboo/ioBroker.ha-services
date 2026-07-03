@@ -1,0 +1,45 @@
+{
+  "common": {
+    "name": "ha-services",
+    "version": "0.0.1",
+    "mode": "daemon",
+    "titleLang": {
+      "en": "Home Assistant Services"
+    },
+    "desc": {
+      "en": "Calls Home Assistant Services"
+    },
+    "authors": [
+      "Dein Name"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "compact": true,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    }
+  },
+  "native": {
+    "url": "",
+    "token": "",
+    "timeout": 5000,
+    "verifySSL": true
+  },
+  "objects": [
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "name": "Connected",
+        "role": "indicator.connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    }
+  ]
+}
