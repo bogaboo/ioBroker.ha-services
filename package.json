@@ -1,10 +1,26 @@
 {
   "name": "iobroker.ha-services",
-  "version": "0.0.1",
-  "description": "Home Assistant Service API Adapter for ioBroker",
-  "author": "Dein Name",
+  "version": "1.0.0",
+  "description": "ioBroker adapter for calling arbitrary Home Assistant services via the official REST API",
+  "author": {
+    "name": "Open Source Community"
+  },
   "license": "MIT",
-  "type": "commonjs",
+  "homepage": "https://github.com/ioBroker-community-adapters/iobroker.ha-services",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ioBroker-community-adapters/iobroker.ha-services.git"
+  },
+  "keywords": [
+    "iobroker",
+    "home-assistant",
+    "ha",
+    "rest",
+    "services"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "main": "build/main.js",
   "files": [
     "build/",
@@ -14,21 +30,31 @@
   ],
   "scripts": {
     "clean": "rimraf build",
-    "build": "npm run clean && tsc -p tsconfig.json",
-    "watch": "tsc -w",
-    "lint": "eslint src --ext .ts",
-    "test": "mocha",
-    "prepublishOnly": "npm run build"
+    "build": "npm run clean && tsc -p tsconfig.build.json",
+    "watch": "tsc -w -p tsconfig.build.json",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "mocha --config test/.mocharc.json",
+    "check": "npm run lint && npm run build && npm test"
   },
   "dependencies": {
     "@iobroker/adapter-core": "^3.2.3",
-    "axios": "^1.8.2"
+    "axios": "^1.11.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
-    "eslint": "^9.0.0",
-    "mocha": "^11.0.0",
+    "@eslint/js": "^9.32.0",
+    "@iobroker/testing": "^5.0.3",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
+    "chai": "^5.2.1",
+    "eslint": "^9.32.0",
+    "mocha": "^11.7.1",
+    "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
-    "typescript": "^5.7.2"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.1"
   }
 }
