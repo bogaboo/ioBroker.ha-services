@@ -1,17 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "strict": true,
-    "declaration": true,
-    "sourceMap": true,
-    "outDir": "./build",
-    "rootDir": "./src",
+    "noImplicitAny": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true
-  },
-  "include": [
-    "src/**/*.ts"
-  ]
+  }
 }
